@@ -28,20 +28,7 @@ parts = _.map parts, (part) ->
       line.push ''
     line
 
-  reformattedPart = _.times longest, -> []
-  _.forEach part, (line, i) ->
-    _.forEach line, (note, j) ->
-      if note isnt ''
-        note = note.split ' '
-        note = [ note[0], 'f', note[1], '0' ]
-        note = note.join ''
-
-      reformattedPart[j].push note
-
-  _.map reformattedPart, (line) ->
-    line.join ','
-
-  reformattedPart.join '\n'
+n
 
 _.forEach parts, (part, i) ->
   fileName = './fixed-up-for-iconoclast/part' + i + '.csv'
